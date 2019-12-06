@@ -60,6 +60,34 @@ function fetchUsers()
 
 This code will generate a new server timing named `fetchUsers` and by calling the `start` and the `stop` method the the execution time is measured.
 
+### Creating a ServerTiming instance
+The `ServerTimings` class provides a `create` method to create a `ServerTiming` instance that is automatically registered and will be sent back by the middleware.
+
+```php
+// create a ServerTiming with a name
+$serverTiming = $serverTimings->create('foo');
+
+// create a ServerTiming with a name and a description
+$serverTiming = $serverTimings->create('foo', 'bar');
+```
+
+### Measuring a ServerTiming
+The `ServerTiming` instance provides two methods for starting and stopping the measurement.
+
+```php
+// normal usage
+$serverTiming->start();
+// ...
+$serverTiming->stop();
+
+// set a manual start value (a microtime value as float)
+$serverTiming->start(1000000.00);
+// ...
+$serverTiming->end();
+```
+
+The middleware will make sure to collect all measured ServerTiming instances and append their values in the `Server-Timing` response header.
+
 ## License
 
 The MIT License (MIT). Please see the [License File](LICENSE) for more information.
