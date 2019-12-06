@@ -85,7 +85,7 @@ $serverTiming->stop();
 // set a manual start value (a microtime value as float)
 $serverTiming->start(1000000.00);
 // ...
-$serverTiming->end();
+$serverTiming->stop();
 ```
 
 The middleware will make sure to collect all measured ServerTiming instances and append their values in the `Server-Timing` response header.
