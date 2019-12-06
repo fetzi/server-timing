@@ -2,8 +2,8 @@
 
 [![Packagist](https://img.shields.io/packagist/v/fetzi/server-timing.svg?style=flat-square)](https://packagist.org/packages/fetzi/server-timing)
 [![Github Actions](https://github.com/fetzi/server-timing/workflows/Build/badge.svg)](https://github.com/fetzi/server-timing/actions)
-[![StyleCI](https://styleci.io/repos/102859380/shield?branch=master)](https://styleci.io/repos/102859380)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a16e78089225f977d475/maintainability)](https://codeclimate.com/github/fetzi/phpspec-watcher/maintainability)
+[![StyleCI](https://github.styleci.io/repos/226304794/shield?branch=master)](https://github.styleci.io/repos/226304794)
+[![Maintainability](https://api.codeclimate.com/v1/badges/2c7c70c0e2d41962167c/maintainability)](https://codeclimate.com/github/fetzi/server-timing/maintainability)
 
 
 ## Introduction
