@@ -1,0 +1,44 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        php: [7.2, 7.3, 7.4]
+
+    name: PHP ${{ matrix.php }}
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Setup PHP version
+      uses: shivammathur/setup-php@v1
+      with:
+        php-version: ${{ matrix.php }}
+        extension-csv: mbstring
+        coverage: none
+
+    - name: Check PHP version
+      run: php -v
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Cache dependencies
+      uses: actions/cache@v1
+      with:
+        path: ~/.composer/cache/files
+        key: dependencies-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: Lint source code
+      run: composer run-script lint
+
+    - name: Run test suite
+      run: composer run-script test
