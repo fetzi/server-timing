@@ -7,6 +7,8 @@
 
 server-timing is a PHP middleware package that adds the `Server-Timing` header to your responses. This information can be viewed in your web browser, for example in Google Chrome.
 
+More information on the `ServerTiming` response header can be found on [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing).
+
 ![](static/server-timing.png)
 
 The package automatically adds two default metrics but allows you to add custom metrics as well.
