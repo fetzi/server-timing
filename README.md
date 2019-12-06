@@ -1,13 +1,15 @@
-# phpspec Watcher
+# Server-Timing middleware package
 
 [![Packagist](https://img.shields.io/packagist/v/fetzi/server-timing.svg?style=flat-square)](https://packagist.org/packages/fetzi/server-timing)
 [![Github Actions](https://github.com/fetzi/server-timing/workflows/Build/badge.svg)](https://github.com/fetzi/server-timing/actions)
 [![StyleCI](https://github.styleci.io/repos/226304794/shield?branch=master)](https://github.styleci.io/repos/226304794)
 [![Maintainability](https://api.codeclimate.com/v1/badges/2c7c70c0e2d41962167c/maintainability)](https://codeclimate.com/github/fetzi/server-timing/maintainability)
 
+server-timing is a PHP middleware package that adds the `Server-Timing` header to your responses. This information can be viewed in your web browser, for example in Google Chrome.
 
-## Introduction
-server-timing is a PHP middleware package that adds the `Server-Timing` header to your responses.
+![](static/server-timing.png)
+
+The package automatically adds two default metrics but allows you to add custom metrics as well.
 
 ## Installation
 
