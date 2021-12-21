@@ -6,29 +6,26 @@ use Psr\Http\Message\ResponseInterface;
 
 class ServerTimings
 {
-    /**
-     * @var array
-     */
-    private $timings = [];
+    private array $timings = [];
 
     /**
-     * creates a new ServerTiming instance and registers it
+     * creates a new ServerTiming instance and registers it.
      *
-     * @param string $name          the name of the server timing
-     * @param string $description   the description for the server timing
+     * @param string $name        the name of the server timing
+     * @param string $description the description for the server timing
      *
      * @return ServerTiming
      */
     public function create(string $name, ?string $description = null)
     {
-        $serverTiming = new ServerTiming($name, $description);
+        $serverTiming    = new ServerTiming($name, $description);
         $this->timings[] = $serverTiming;
 
         return $serverTiming;
     }
 
     /**
-     * returns the formatted Server-Timing header value
+     * returns the formatted Server-Timing header value.
      *
      * @return string
      */
@@ -42,11 +39,9 @@ class ServerTimings
     }
 
     /**
-     * adds the stored server timings to the given response instance
+     * adds the stored server timings to the given response instance.
      *
      * @param ResponseInterface $response the response to add to
-     *
-     * @return ResponseInterface
      */
     public function addToResponse(ResponseInterface $response): ResponseInterface
     {

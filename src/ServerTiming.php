@@ -2,36 +2,18 @@
 
 namespace Fetzi\ServerTiming;
 
-class ServerTiming
+class ServerTiming implements \Stringable
 {
-    /**
-     * @var string
-     */
-    private $name;
+    private ?float $start = null;
 
-    /**
-     * @var string
-     */
-    private $description;
+    private ?float $end = null;
 
-    /**
-     * @var float
-     */
-    private $start;
-
-    /**
-     * @var float
-     */
-    private $end;
-
-    public function __construct(string $name, ?string $description = null)
+    public function __construct(private string $name, private ?string $description = null)
     {
-        $this->name = $name;
-        $this->description = $description;
     }
 
     /**
-     * captures the starting microtime value for the server timing
+     * captures the starting microtime value for the server timing.
      *
      * @param float $fixedValue allows to set start to a predefined value
      */
@@ -41,14 +23,14 @@ class ServerTiming
     }
 
     /**
-     * captures the end microtime value for the server timing
+     * captures the end microtime value for the server timing.
      */
     public function stop(): void
     {
         $this->end = microtime(true);
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         $timing = $this->name;
 
