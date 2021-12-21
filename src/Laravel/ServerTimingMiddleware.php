@@ -9,14 +9,8 @@ class ServerTimingMiddleware
 {
     private const REQUEST_TIME = 'REQUEST_TIME_FLOAT';
 
-    /**
-     * @var ServerTimings
-     */
-    private $serverTimings;
-
-    public function __construct(ServerTimings $serverTimings)
+    public function __construct(private ServerTimings $serverTimings)
     {
-        $this->serverTimings = $serverTimings;
     }
 
     public function handle($request, Closure $next)

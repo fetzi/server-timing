@@ -10,8 +10,8 @@ class ServerTimingsTest extends TestCase
 {
     public function testWithEmptyTimings()
     {
-        $serverTimings = new ServerTimings;
-        $response = $this->prophesize(ResponseInterface::class);
+        $serverTimings = new ServerTimings();
+        $response      = $this->prophesize(ResponseInterface::class);
 
         $response->withAddedHeader()->shouldNotBeCalled();
 
@@ -20,7 +20,7 @@ class ServerTimingsTest extends TestCase
 
     public function testWithAddedTimings()
     {
-        $serverTimings = new ServerTimings;
+        $serverTimings = new ServerTimings();
         $serverTimings->create('foo');
         $serverTimings->create('bar');
         $response = $this->prophesize(ResponseInterface::class);
