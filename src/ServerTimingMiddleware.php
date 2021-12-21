@@ -2,7 +2,6 @@
 
 namespace Fetzi\ServerTiming;
 
-use Fetzi\ServerTiming\ServerTimings;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
@@ -12,18 +11,12 @@ class ServerTimingMiddleware implements MiddlewareInterface
 {
     private const REQUEST_TIME = 'REQUEST_TIME_FLOAT';
 
-    /**
-     * @var ServerTimings
-     */
-    private $serverTimings;
-
-    public function __construct(ServerTimings $serverTimings)
+    public function __construct(private ServerTimings $serverTimings)
     {
-        $this->serverTimings = $serverTimings;
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
