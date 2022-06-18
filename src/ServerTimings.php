@@ -38,7 +38,7 @@ class ServerTimings
             return null;
         }
 
-        return implode(', ', $this->timings);
+        return implode('; ', $this->timings);
     }
 
     /**
