@@ -12,10 +12,12 @@
     "license": "MIT",
     "homepage": "https://github.com/fetzi/server-timing",
     "require": {
-        "php": "^7.2",
+        "php": "^8.0",
+        "illuminate/support": "^12.6",
         "psr/http-server-middleware": "^1.0"
     },
     "require-dev": {
+        "phpspec/prophecy": "^1.20",
         "phpunit/phpunit": "^8.5",
         "squizlabs/php_codesniffer": "^3.5"
     },
@@ -35,5 +37,12 @@
     },
     "config": {
         "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fetzi\\ServerTiming\\Providers\\ServerTimingProvider"
+            ]
+        }
     }
 }

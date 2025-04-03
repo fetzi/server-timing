@@ -4,25 +4,13 @@ namespace Fetzi\ServerTiming;
 
 class ServerTiming
 {
-    /**
-     * @var string
-     */
-    private $name;
+    private string $name;
 
-    /**
-     * @var string
-     */
-    private $description;
+    private ?string $description = null;
 
-    /**
-     * @var float
-     */
-    private $start;
+    private ?float $start = null;
 
-    /**
-     * @var float
-     */
-    private $end;
+    private ?float $end = null;
 
     public function __construct(string $name, ?string $description = null)
     {
@@ -35,7 +23,7 @@ class ServerTiming
      *
      * @param float $fixedValue allows to set start to a predefined value
      */
-    public function start(float $fixedValue = null): void
+    public function start(?float $fixedValue = null): void
     {
         $this->start = $fixedValue ?? microtime(true);
     }

@@ -6,10 +6,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class ServerTimings
 {
-    /**
-     * @var array
-     */
-    private $timings = [];
+    private array $timings = [];
 
     /**
      * creates a new ServerTiming instance and registers it
